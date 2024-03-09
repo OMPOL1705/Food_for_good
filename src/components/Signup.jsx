@@ -40,6 +40,7 @@ const Signup = () => {
       <div>
         <img src={logo} alt="Login" className="mx-auto w-60 h-auto" />
       </div>
+      <div class="w-full max-w-sm p-4 pt-0 mx-auto bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-center gap-4 mb-8">
         <Link to="/login" className="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">Login</Link>
         <Link to="/signup" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">Signup</Link>
@@ -98,9 +99,9 @@ const Signup = () => {
 							required id="password" className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" />
         </div>
         {error && <div className="text-red-500">{error}</div>}
-        <button type="submit" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new account</button>
+        <button type="submit" className="text-white mx-auto bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Register new account</button>
       </form>
-
+    </div>
     </>
   )
 }

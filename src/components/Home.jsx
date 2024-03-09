@@ -1,42 +1,83 @@
+import Navbar from './Navbar';
 import React from 'react';
-import { Link } from 'react-router-dom';
+import img1 from '../assets/3A0A2961.jpg';
+import img2 from '../assets/3A0A2926.jpg';
+import img3 from '../assets/3A0A3005.jpg';
+import front from '../assets/DJI_0003.jpg';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Footer from './Footer';
 
 const Home = () => {
-    const handleLogout = () => {
-		localStorage.removeItem("token");
-		window.location.reload();
-	};
-
+    const settings = {
+        dots: false,
+        infinite: true,
+        speed: 2000,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 2000, 
+        fade: true,  
+    };
     return (
         <>
-            <nav class="bg-white border-gray-200 dark:bg-gray-900">
-            <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-                <a href="https://flowbite.com/" class="flex items-center space-x-3 rtl:space-x-reverse">
-                    <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-                    <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Flowbite</span>
-                </a>
-                <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
-                    <span class="sr-only">Open main menu</span>
-                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
-                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15"/>
-                    </svg>
-                </button>
-                <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-                <ul class="font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 rtl:space-x-reverse md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-                    <li>
-                    <Link to="/" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Home</Link>
-                    </li>
-                    <li>
-                    <Link to="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</Link>
-                    </li>
-                    <li>
-                    <Link to="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Contact</Link>
-                    </li>
-                </ul>
+            <Navbar />
+            <img className="w-full max-w-full absolute top-0 left-0" src={front} alt="imagedescription" style={{zIndex:"-1", height:"100vh"}}/>
+            <div style={{display:"flex", flexDirection:"column", gap:"20vh", marginTop:"95vh"}}>
+                <div style={{marginLeft:"auto", marginRight:"auto" ,display:"flex", flexWrap:"wrap", gap:"50px"}}> 
+                    <img className="h-auto max-w-lg rounded-lg" src="https://images.squarespace-cdn.com/content/v1/5faae45cf877175a51267735/f6aad9c1-8c95-4a58-bd5d-e1ba78b45bc8/IMG04412-squashed.jpg?format=1500w" alt="imagedescription" />
+                    <div style={{paddingLeft:"30px", display:"flex", justifyContent:"center", flexDirection:"column", alignItems:"center"}}>
+                        <h1 className='white-space:pre-wrap;' style={{fontSize:"70px"}}>Order</h1>
+                        <h1 className='white-space:pre-wrap;' style={{fontSize:"70px"}}>Online !</h1>
+                        <h5 style={{fontSize:"30px"}}>SKIP THE APPS AND ORDER</h5>
+                        <h5 style={{fontSize:"30px"}}>STRAIGHT THROUGH US</h5>
+                    <button type="button" className="text-white bg-gradient-to-br p-6 mt-4 from-pink-500 to-orange-400 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-pink-200 dark:focus:ring-pink-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2">Order Now</button>
+                    </div>
                 </div>
-                <button type="button" onClick={handleLogout} class="focus:outline-none text-white bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:ring-purple-300 font-medium rounded-lg text-sm px-5 py-2.5 mb-2 dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-900">Logout</button>
+            
+                
+                <section className="bg-center bg-no-repeat bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/conference.jpg')] bg-gray-700 bg-blend-multiply">
+                    <div className="px-4 mx-auto max-w-screen-xl text-center py-24 lg:py-56">
+                        <h1 className="mb-4 text-4xl font-extrabold tracking-tight leading-none text-white md:text-5xl lg:text-6xl">eat together</h1>
+                        <p className="mb-8 text-lg font-normal text-gray-300 lg:text-xl sm:px-16 lg:px-48">Every plate brings you right back to those old traditions- mangia!</p>
+                        <div className="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0">
+                            <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                                <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                 Menu
+                                </span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+
+                <div className="slideshow-wrapper">
+                    <Slider {...settings} className="slideshow-slider" style={{width:"65vw", margin:"0 auto"}}>
+                        <div>
+                            <img src={img1} style={{ borderRadius: "10px"}} alt="Image1" />
+                        </div>
+                        <div>
+                            <img src={img2} style={{ borderRadius: "10px"}} alt="Image2" />
+                        </div>
+                        <div>
+                            <img src={img3} style={{ borderRadius: "10px"}} alt="Image3" />
+                        </div>
+                    </Slider>
+                    <div className="slideshow-text my-4">
+                        <h1 style={{textAlign: "center"}} className="mb-4 text-4xl font-bold tracking-tight leading-none text-black md:text-5xl lg:text-6xl">gallery</h1>
+                    </div>
+                    <div class="text-center" style={{marginTop:"30px"}}>
+                        <button class="relative inline-flex items-center justify-center p-0.5 mb-2 me-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-500 to-pink-500 group-hover:from-purple-500 group-hover:to-pink-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-purple-200 dark:focus:ring-purple-800">
+                            <span class="relative px-5 py-2.5 transition-all ease-in duration-75 bg-white dark:bg-gray-900 rounded-md group-hover:bg-opacity-0">
+                                View
+                            </span>
+                        </button>
+                    </div>
+                </div>
+
+            <Footer />
             </div>
-            </nav>
         </>
     )
 }
