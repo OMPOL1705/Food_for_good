@@ -3,8 +3,8 @@ import logo from '../assets/logo.png';
 import axios from "axios";
 import { Link } from 'react-router-dom';
 
-const Login = () => {
-  const [data, setData] = useState({ email: "", password: "" });
+const Alogin = () => {
+    const [data, setData] = useState({ email: "", password: "" });
 	const [error, setError] = useState("");
 
 	const handleChange = ({ currentTarget: input }) => {
@@ -14,7 +14,7 @@ const Login = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/auth";
+			const url = "http://localhost:8080/api/adauth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/";
@@ -28,7 +28,6 @@ const Login = () => {
 			}
 		}
 	};
-
   return (
     <>
       <div>
@@ -40,8 +39,8 @@ const Login = () => {
         <Link to="/alogin" style={{padding:"10px 75px"}} className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400">Admin</Link>
       </div>
       <div className="flex justify-center gap-4 mb-8">
-        <Link to="/login" className="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">Login</Link>
-        <Link to="/signup" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">Signup</Link>
+        <Link to="/alogin" className="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">Login</Link>
+        {/* <Link to="/asignup" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">Signup</Link> */}
       </div>
 
       <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
@@ -72,7 +71,7 @@ const Login = () => {
       </form>
       </div>
     </>
-  );
-};
+  )
+}
 
-export default Login;
+export default Alogin

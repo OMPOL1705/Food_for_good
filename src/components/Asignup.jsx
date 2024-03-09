@@ -3,8 +3,8 @@ import logo from '../assets/logo.png';
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
-const Signup = () => {
-  const [data, setData] = useState({
+const Asignup = () => {
+    const [data, setData] = useState({
 		firstName: "",
 		lastName: "",
 		email: "",
@@ -20,9 +20,9 @@ const Signup = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/users";
+			const url = "http://localhost:8080/api/admin";
 			const { data: res } = await axios.post(url, data);
-			navigate("/login");
+			navigate("/alogin");
 			console.log(res.message);
 		} catch (error) {
 			if (
@@ -34,7 +34,6 @@ const Signup = () => {
 			}
 		}
 	};
-
   return (
     <>
       <div>
@@ -46,8 +45,8 @@ const Signup = () => {
         <Link to="/alogin" style={{padding:"10px 75px"}} className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400">Admin</Link>
       </div>
       <div className="flex justify-center gap-4 mb-8">
-        <Link to="/login" className="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">Login</Link>
-        <Link to="/signup" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">Signup</Link>
+        <Link to="/alogin" className="bg-blue-600 hover:bg-blue-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400">Login</Link>
+        <Link to="/asignup" className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 rounded-lg focus:outline-none focus:ring-2 focus:ring-gray-400">Signup</Link>
       </div>
     
       <form className="max-w-sm mx-auto" onSubmit={handleSubmit}>
@@ -110,4 +109,4 @@ const Signup = () => {
   )
 }
 
-export default Signup;
+export default Asignup
