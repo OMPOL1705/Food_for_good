@@ -17,7 +17,7 @@ const Alogin = () => {
 			const url = "http://localhost:8080/api/adauth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
-			window.location = "/";
+			window.location = "/dashboard";
 		} catch (error) {
 			if (
 				error.response &&
@@ -33,7 +33,7 @@ const Alogin = () => {
       <div>
         <img src={logo} alt="Login" className="mx-auto w-60 h-auto" />
       </div>
-      <div class="w-full max-w-sm pt-0 px-8 pb-8 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+      <div className="w-full max-w-sm pt-0 px-8 pb-8 mx-auto bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
       <div className="flex justify-center mb-8">
         <Link to="/login" style={{padding:"10px 75px"}} className="bg-gray-500 border-r border-black hover:bg-blue-600 text-white font-semibold px-8 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400">User</Link>
         <Link to="/alogin" style={{padding:"10px 75px"}} className="bg-gray-500 hover:bg-gray-600 text-white font-semibold px-8 py-3 focus:outline-none focus:ring-2 focus:ring-gray-400">Admin</Link>

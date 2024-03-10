@@ -5,7 +5,7 @@ import logo from '../assets/logo.png';
 const Navbar = () => {
     const handleLogout = () => {
 		localStorage.removeItem("token");
-		window.location.reload();
+		window.location = "/";
 	};
     return (
             <nav className="bg-transparent border-gray-300 dark:bg-gray-900" style={{ zIndex: '9999' }}>
