@@ -35,7 +35,7 @@ const Add = () => {
         console.log(formData);
 
         try {
-            await axios.post('http://localhost:8080/api/product', formData, {
+            await axios.post('https://food-for-good-backend-ukib.vercel.app/api/product', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data'
                 }

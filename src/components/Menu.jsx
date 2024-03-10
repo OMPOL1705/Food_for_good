@@ -10,7 +10,7 @@ const Menu = () => {
 
     const fetchProductsByCategory = async (category) => {
         try {
-        const response = await axios.get(`http://localhost:8080/api/productget?category=${category}`);
+        const response = await axios.get(`https://food-for-good-backend-ukib.vercel.app/api/productget?category=${category}`);
         setProducts(response.data.products);
         
         } catch (error) {

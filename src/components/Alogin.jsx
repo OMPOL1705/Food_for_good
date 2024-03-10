@@ -14,7 +14,7 @@ const Alogin = () => {
 	const handleSubmit = async (e) => {
 		e.preventDefault();
 		try {
-			const url = "http://localhost:8080/api/adauth";
+			const url = "https://food-for-good-backend-ukib.vercel.app/api/adauth";
 			const { data: res } = await axios.post(url, data);
 			localStorage.setItem("token", res.data);
 			window.location = "/dashboard";
